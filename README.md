@@ -9,6 +9,12 @@ Four read-only diagnostics for an Omarchy desktop (Arch Linux, Hyprland, Quicksh
 | `bar-plugin-audit` | Which shell plugins are installed, enabled, in the bar layout, and crashing? Plus a QML hazard scan |
 | `qs-crash-digest` | Which Quickshell crashes repeat? Groups reports by signal, top frame and last plugin loaded |
 
+## Hardware and on-prem
+
+- They run on the Linux desktop they inspect. No GPU is required, no server and no install: each tool is one Python file.
+- Nothing leaves the machine. They make no network calls and write no files. They read `hyprctl` output, `/sys`, local config and crash reports.
+- `display-doctor` reports GPU load only for amdgpu cards. Use `nvidia-smi` for NVIDIA.
+
 ## How it works
 
 ```mermaid
