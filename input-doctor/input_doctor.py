@@ -321,7 +321,7 @@ def check_screenshot_tilt(ctx: Context) -> Check:
         return Check(cid, title, FAIL, f"cannot read live binds: {why}", fix)
     if not tilt:
         return Check(cid, title, PASS, "no root-level tilt binds: tilt is native horizontal scroll", fix)
-    return Check(cid, title, WARN, f"tilt is bound outside Game Mode, so it will not scroll: {names}", fix)
+    return Check(cid, title, WARN, f"tilt is bound outside a submap, so it will not scroll: {names}", fix)
 
 
 # ---------------------------------------------------------------- Paste plumbing

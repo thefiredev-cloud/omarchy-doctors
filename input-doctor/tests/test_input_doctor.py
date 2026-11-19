@@ -229,18 +229,18 @@ class BindTests(Env):
         self.assertEqual(r.status, idr.PASS)
 
     def test_alt_z_missing(self):
-        r = idr.check_screenshot_alt_z(self.ctx_binds([bind("Z", idr.MOD_SUPER, "other"), bind("Z", idr.MOD_ALT, "game", submap="game")]))
+        r = idr.check_screenshot_alt_z(self.ctx_binds([bind("Z", idr.MOD_SUPER, "other"), bind("Z", idr.MOD_ALT, "alt", submap="alt")]))
         self.assertEqual(r.status, idr.FAIL)
 
     def test_tilt_native_by_default(self):
         self.assertEqual(idr.check_screenshot_tilt(self.ctx_binds([])).status, idr.PASS)
 
-    def test_tilt_bound_outside_game_mode_warns(self):
+    def test_tilt_bound_outside_submap_warns(self):
         r = idr.check_screenshot_tilt(self.ctx_binds([bind("mouse_left", 0, "Rapoo tilt left: Fullscreen screenshot")]))
         self.assertEqual(r.status, idr.WARN)
 
-    def test_tilt_in_game_submap_ignored(self):
-        r = idr.check_screenshot_tilt(self.ctx_binds([bind("mouse_left", 0, "g", submap="game")]))
+    def test_tilt_in_submap_ignored(self):
+        r = idr.check_screenshot_tilt(self.ctx_binds([bind("mouse_left", 0, "g", submap="alt")]))
         self.assertEqual(r.status, idr.PASS)
 
     def test_tilt_expected_present(self):
