@@ -43,7 +43,7 @@ Python 3 standard library only. No packages to install.
 ```bash
 git clone https://github.com/thefiredev-cloud/omarchy-doctors.git
 cd omarchy-doctors
-./scripts/test.sh                      # 97 tests across the four tools
+./scripts/test.sh                      # 99 tests across the four tools
 ./display-doctor/display-doctor        # text report, add --json for machine output
 ./input-doctor/input-doctor --strict   # exit 1 if any check fails
 python3 bar-plugin-audit/bar_plugin_audit.py --json
