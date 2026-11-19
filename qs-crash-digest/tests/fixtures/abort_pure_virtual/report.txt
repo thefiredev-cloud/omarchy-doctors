@@ -1,0 +1,141 @@
+===== Version Information =====
+Quickshell: 0.3.2 (revision 2b4501a282689792b62e94f3fb30d8f512324fe6, distributed by Omarchy)
+Qt: 6.12.0 (built against 6.12.0)
+
+===== Build Information =====
+Build Type: RelWithDebInfo
+Compiler: GNU (16.2.1)
+Compile Flags: -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -fexceptions         -Wp,-D_FORTIFY_SOURCE=3 -Wformat -Werror=format-security         -fstack-clash-protection -fcf-protection         -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -Wp,-D_GLIBCXX_ASSERTIONS -g -ffile-prefix-map=/src/quickshell/src=/usr/src/debug/quickshell -flto=auto
+Configuration:
+  Distributor: Omarchy
+  Disable precompild headers (dev): OFF
+  Build tests (dev): OFF
+  ASAN (dev): OFF
+  Keep Frame Pointers (dev): OFF
+  Use jemalloc: ON
+  Crash Handling: ON
+  Unix Sockets: ON
+  Wayland: ON
+    Wlroots Layer-Shell: ON
+    Session Lock: ON
+    Foreign Toplevel Management: ON
+    Hyprland: ON
+      Hyprland IPC: ON
+      Hyprland Global Shortcuts: ON
+      Hyprland Focus Grabbing: ON
+      Hyprland Surface Extensions: ON
+    Screencopy: ON
+      Image Copy Capture: ON
+      Wlroots Screencopy: ON
+      Hyprland Toplevel Export: ON
+  X11: ON
+  I3/Sway: ON
+    I3/Sway IPC: ON
+  System Tray: ON
+  PipeWire: ON
+  Mpris: ON
+  Pam: ON
+  Polkit: ON
+  Greetd: ON
+  UPower: ON
+  Notifications: ON
+  Bluetooth: ON
+  Network: ON
+
+===== System Information =====
+GPU /dev/dri/renderD129
+  Driver: amdgpu 3.64.0 (AMD GPU)
+  Model: 1002:164e
+  Address: PCI 10:00.0
+GPU /dev/dri/renderD128
+  Driver: nvidia-drm 0.0.0 (NVIDIA DRM driver)
+  Model: 10de:2704
+  Address: PCI 01:00.0
+
+/etc/os-release:
+NAME="Omarchy"
+PRETTY_NAME="Omarchy"
+ID=omarchy
+ID_LIKE=arch
+BUILD_ID="4.0.6"
+VERSION_ID="4.0.6"
+ANSI_COLOR="38;2;158;206;106"
+HOME_URL="https://omarchy.org/"
+DOCUMENTATION_URL="https://learn.omacom.io/2/the-omarchy-manual"
+SUPPORT_URL="https://discord.gg/tXFUdasqhY"
+BUG_REPORT_URL="https://github.com/basecamp/omarchy/issues"
+LOGO=omarchy
+
+/etc/lsb-release:
+DISTRIB_ID="Arch"
+DISTRIB_RELEASE="rolling"
+DISTRIB_DESCRIPTION="Arch Linux"
+
+===== Environment (trimmed) =====
+QS_NO_RELOAD_POPUP=1
+QS_DISABLE_FILE_WATCHER=1
+QT_QPA_PLATFORMTHEME=gtk3
+XDG_CURRENT_DESKTOP=Hyprland
+QT_QPA_PLATFORM=wayland;xcb
+QT_IM_MODULE=fcitx
+QT_QUICK_CONTROLS_STYLE=Fusion
+
+===== Instance Information =====
+Signal: Aborted (6)
+Crashed process ID: 728737
+Run ID: z4lfsp49nt
+Shell ID: c0240dfe8c8e8a421e1f8db23a03fc60
+Config Path: /usr/share/omarchy/shell/shell.qml
+
+===== Stacktrace =====
+#0  0x00007ff62063e6ef at /usr/bin/../lib/libc.so.6
+#1  0x00007ff62069a11c at /usr/bin/../lib/libc.so.6
+#2  0x00007ff62063e5cf in raise at /usr/bin/../lib/libc.so.6
+#3  0x00007ff620625684 in abort at /usr/bin/../lib/libc.so.6
+#4  0x00007ff620e9a3a3 at /usr/bin/../lib/libQt6Core.so.6
+#5  0x00007ff620f15c00 in QDebug::~QDebug() at /usr/bin/../lib/libQt6Core.so.6
+#6  0x00005623ef9832e6 at /usr/bin/quickshell
+#7  0x00007ff620ab5819 at /usr/bin/../lib/libstdc++.so.6
+#8  0x00007ff620a9a5ec in std::terminate() at /usr/bin/../lib/libstdc++.so.6
+#9  0x00007ff620ab6704 in __cxa_pure_virtual at /usr/bin/../lib/libstdc++.so.6
+#10 0x00007ff6211513f6 in QIOVectoredWriteOperation::~QIOVectoredWriteOperation() at /usr/bin/../lib/libQt6Core.so.6
+#11 0x00007ff622a66681 at /usr/bin/../lib/libQt6Quick.so.6
+#12 0x00007ff622a665e0 at /usr/bin/../lib/libQt6Quick.so.6
+#13 0x00007ff622a665e0 at /usr/bin/../lib/libQt6Quick.so.6
+#14 0x00007ff622a665e0 at /usr/bin/../lib/libQt6Quick.so.6
+#15 0x00007ff622a665e0 at /usr/bin/../lib/libQt6Quick.so.6
+#16 0x00007ff622a665e0 at /usr/bin/../lib/libQt6Quick.so.6
+#17 0x00007ff622a665e0 at /usr/bin/../lib/libQt6Quick.so.6
+#18 0x00007ff622a6884d in QQuickWindow::physicalDpiChanged() at /usr/bin/../lib/libQt6Quick.so.6
+#19 0x00007ff622a6b029 in QQuickWindow::event(QEvent*) at /usr/bin/../lib/libQt6Quick.so.6
+#20 0x00007ff620f891d7 in QCoreApplication::notifyInternal2(QObject*, QEvent*) at /usr/bin/../lib/libQt6Core.so.6
+#21 0x00007ff6220228d1 in QWindowPrivate::updateDevicePixelRatio() at /usr/bin/../lib/libQt6Gui.so.6
+#22 0x00007ff622047244 at /usr/bin/../lib/libQt6Gui.so.6
+#23 0x00007ff623e5c99c in QtWaylandClient::QWaylandWindow::setScale(double) at /usr/bin/../lib/libQt6WaylandClient.so.6
+#24 0x00007ff620ff6cc7 at /usr/bin/../lib/libQt6Core.so.6
+#25 0x00007ff622fb1db5 at /usr/lib/libffi.so.8
+#26 0x00007ff622fada6c at /usr/lib/libffi.so.8
+#27 0x00007ff622fb0e31 in ffi_call at /usr/lib/libffi.so.8
+#28 0x00007ff623ec97cc at /usr/bin/../lib/libwayland-client.so.0
+#29 0x00007ff623eca6b8 at /usr/bin/../lib/libwayland-client.so.0
+#30 0x00007ff623ecaaea in wl_display_dispatch_queue_pending at /usr/bin/../lib/libwayland-client.so.0
+#31 0x00007ff623e13c41 in QtWaylandClient::QWaylandDisplay::flushRequests() at /usr/bin/../lib/libQt6WaylandClient.so.6
+#32 0x00007ff620febe65 in QObject::event(QEvent*) at /usr/bin/../lib/libQt6Core.so.6
+#33 0x00007ff620f891d7 in QCoreApplication::notifyInternal2(QObject*, QEvent*) at /usr/bin/../lib/libQt6Core.so.6
+#34 0x00007ff620f8a36e in QCoreApplicationPrivate::sendPostedEvents(QObject*, int, QThreadData*) at /usr/bin/../lib/libQt6Core.so.6
+#35 0x00007ff6212c66b7 at /usr/bin/../lib/libQt6Core.so.6
+#36 0x00007ff62391d75d at /usr/bin/../lib/libglib-2.0.so.0
+#37 0x00007ff623926c4f at /usr/bin/../lib/libglib-2.0.so.0
+#38 0x00007ff623926db4 in g_main_context_iteration at /usr/bin/../lib/libglib-2.0.so.0
+#39 0x00007ff6212c4d21 in QEventDispatcherGlib::processEvents(QFlags<QEventLoop::ProcessEventsFlag>) at /usr/bin/../lib/libQt6Core.so.6
+#40 0x00007ff620f96a73 in QEventLoop::exec(QFlags<QEventLoop::ProcessEventsFlag>) at /usr/bin/../lib/libQt6Core.so.6
+#41 0x00007ff620f8cfc9 in QCoreApplication::exec() at /usr/bin/../lib/libQt6Core.so.6
+#42 0x00005623ef9f3893 at /usr/bin/quickshell
+#43 0x00005623ef9eb293 at /usr/bin/quickshell
+#44 0x00005623ef9d35ee at /usr/bin/quickshell
+#45 0x00007ff620627780 at /usr/bin/../lib/libc.so.6
+#46 0x00007ff6206278b8 in __libc_start_main at /usr/bin/../lib/libc.so.6
+#47 0x00005623ef9d6214 at /usr/bin/quickshell
+
+===== Log Tail =====
+2083-08-10 12:43:04.000 FATAL: Terminate called without active C++ exception

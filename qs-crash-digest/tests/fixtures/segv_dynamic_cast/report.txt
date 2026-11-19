@@ -1,0 +1,218 @@
+===== Version Information =====
+Quickshell: 0.3.1 (revision , distributed by Arch Linux)
+Qt: 6.11.2 (built against 6.11.2)
+
+===== Build Information =====
+Build Type: RelWithDebInfo
+Compiler: GNU (16.2.1)
+Compile Flags: -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -fexceptions         -Wp,-D_FORTIFY_SOURCE=3 -Wformat -Werror=format-security         -fstack-clash-protection -fcf-protection         -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -Wp,-D_GLIBCXX_ASSERTIONS -g -ffile-prefix-map=/build/quickshell/src=/usr/src/debug/quickshell -flto=auto
+Configuration:
+  Distributor: Arch Linux
+  Disable precompild headers (dev): OFF
+  Build tests (dev): OFF
+  ASAN (dev): OFF
+  Keep Frame Pointers (dev): OFF
+  Use jemalloc: ON
+  Crash Handling: ON
+  Unix Sockets: ON
+  Wayland: ON
+    Wlroots Layer-Shell: ON
+    Session Lock: ON
+    Foreign Toplevel Management: ON
+    Hyprland: ON
+      Hyprland IPC: ON
+      Hyprland Global Shortcuts: ON
+      Hyprland Focus Grabbing: ON
+      Hyprland Surface Extensions: ON
+    Screencopy: ON
+      Image Copy Capture: ON
+      Wlroots Screencopy: ON
+      Hyprland Toplevel Export: ON
+  X11: ON
+  I3/Sway: ON
+    I3/Sway IPC: ON
+  System Tray: ON
+  PipeWire: ON
+  Mpris: ON
+  Pam: ON
+  Polkit: ON
+  Greetd: ON
+  UPower: ON
+  Notifications: ON
+  Bluetooth: ON
+  Network: ON
+
+===== System Information =====
+GPU /dev/dri/renderD129
+  Driver: amdgpu 3.64.0 (AMD GPU)
+  Model: 1002:164e
+  Address: PCI 10:00.0
+GPU /dev/dri/renderD128
+  Driver: nvidia-drm 0.0.0 (NVIDIA DRM driver)
+  Model: 10de:2704
+  Address: PCI 01:00.0
+
+/etc/os-release:
+NAME="Omarchy"
+PRETTY_NAME="Omarchy"
+ID=omarchy
+ID_LIKE=arch
+BUILD_ID="4.0.2"
+VERSION_ID="4.0.2"
+ANSI_COLOR="38;2;158;206;106"
+HOME_URL="https://omarchy.org/"
+DOCUMENTATION_URL="https://learn.omacom.io/2/the-omarchy-manual"
+SUPPORT_URL="https://discord.gg/tXFUdasqhY"
+BUG_REPORT_URL="https://github.com/basecamp/omarchy/issues"
+LOGO=omarchy
+
+/etc/lsb-release:
+DISTRIB_ID="Arch"
+DISTRIB_RELEASE="rolling"
+DISTRIB_DESCRIPTION="Arch Linux"
+
+===== Environment (trimmed) =====
+QS_NO_RELOAD_POPUP=1
+QS_DISABLE_FILE_WATCHER=1
+QT_QPA_PLATFORMTHEME=gtk3
+XDG_CURRENT_DESKTOP=Hyprland
+QT_QPA_PLATFORM=wayland;xcb
+QT_IM_MODULE=fcitx
+QT_QUICK_CONTROLS_STYLE=Fusion
+
+===== Instance Information =====
+Signal: Segmentation fault (11)
+Crashed process ID: 3243107
+Run ID: 0xhx1hdeglt
+Shell ID: c0240dfe8c8e8a421e1f8db23a03fc60
+Config Path: /usr/share/omarchy/shell/shell.qml
+
+===== Stacktrace =====
+#0  0x00007f50b843e6ef at /usr/bin/../lib/libc.so.6
+#1  0x00007f50b88b3f55 in __dynamic_cast at /usr/bin/../lib/libstdc++.so.6
+#2  0x000055596003f20a at /usr/bin/quickshell
+#3  0x0000555960042712 at /usr/bin/quickshell
+#4  0x00007f50b995c833 in QQmlObjectCreator::finalize(QQmlInstantiationInterrupt&) at /usr/bin/../lib/libQt6Qml.so.6
+#5  0x00007f50b9914a6b in QQmlIncubatorPrivate::incubate(QQmlInstantiationInterrupt&) at /usr/bin/../lib/libQt6Qml.so.6
+#6  0x00007f50b9915166 in QQmlIncubatorPrivate::incubate(QQmlInstantiationInterrupt&) at /usr/bin/../lib/libQt6Qml.so.6
+#7  0x00007f50b9915ce0 in QQmlIncubationController::incubateFor(int) at /usr/bin/../lib/libQt6Qml.so.6
+#8  0x00005559601e51c1 at /usr/bin/quickshell
+#9  0x00007f50b8de6b95 in QObject::event(QEvent*) at /usr/bin/../lib/libQt6Core.so.6
+#10 0x00007f50b8d822b7 in QCoreApplication::notifyInternal2(QObject*, QEvent*) at /usr/bin/../lib/libQt6Core.so.6
+#11 0x00007f50b8d826c0 in QCoreApplicationPrivate::sendPostedEvents(QObject*, int, QThreadData*) at /usr/bin/../lib/libQt6Core.so.6
+#12 0x00007f50b909a4b7 at /usr/bin/../lib/libQt6Core.so.6
+#13 0x00007f50bb66bc75 at /usr/bin/../lib/libglib-2.0.so.0
+#14 0x00007f50bb66ded6 at /usr/bin/../lib/libglib-2.0.so.0
+#15 0x00007f50bb66e054 in g_main_context_iteration at /usr/bin/../lib/libglib-2.0.so.0
+#16 0x00007f50b9096f31 in QEventDispatcherGlib::processEvents(QFlags<QEventLoop::ProcessEventsFlag>) at /usr/bin/../lib/libQt6Core.so.6
+#17 0x00007f50b8d8f663 in QEventLoop::exec(QFlags<QEventLoop::ProcessEventsFlag>) at /usr/bin/../lib/libQt6Core.so.6
+#18 0x00007f50b8d86859 in QCoreApplication::exec() at /usr/bin/../lib/libQt6Core.so.6
+#19 0x000055595ffb85f1 at /usr/bin/quickshell
+#20 0x000055595ffa801f at /usr/bin/quickshell
+#21 0x000055595ffadcef at /usr/bin/quickshell
+#22 0x000055595ff96490 at /usr/bin/quickshell
+#23 0x00007f50b8427780 at /usr/bin/../lib/libc.so.6
+#24 0x00007f50b84278b8 in __libc_start_main at /usr/bin/../lib/libc.so.6
+#25 0x000055595ff99084 at /usr/bin/quickshell
+
+===== Log Tail =====
+2026-09-16 03:56:06.000 DEBUG quickshell.io.fileview: Reader started for "/home/USER/.config/fontconfig/fonts.conf"
+2026-09-16 03:56:06.000 DEBUG quickshell.io.fileview: Starting async load for FileView_QMLTYPE_5(0x7f50aa7f5bc0) of "/home/USER/.local/state/omarchy/toggles/hypr/window-no-gaps.lua"
+2026-09-16 03:56:06.000 DEBUG quickshell.io.fileview: Creating watcher for FileView_QMLTYPE_5(0x7f50aa7f5bc0) at "/home/USER/.local/state/omarchy/toggles/hypr/window-no-gaps.lua"
+2026-09-16 03:56:06.000 DEBUG quickshell.io.fileview: Reader started for "/home/USER/.local/state/omarchy/toggles/hypr/window-no-gaps.lua"
+2026-09-16 03:56:06.000 DEBUG quickshell.io.fileview: Starting async load for FileView_QMLTYPE_5(0x7f50aa7f4f80) of "/home/USER/.local/state/omarchy/toggles"
+2026-09-16 03:56:06.000 DEBUG quickshell.io.fileview: Creating watcher for FileView_QMLTYPE_5(0x7f50aa7f4f80) at "/home/USER/.local/state/omarchy/toggles"
+2026-09-16 03:56:06.000 DEBUG quickshell.io.fileview: Reader started for "/home/USER/.local/state/omarchy/toggles"
+2026-09-16 03:56:06.000 DEBUG quickshell.io.fileview: Starting async load for FileView_QMLTYPE_5(0x7f50aa7f4c00) of "/home/USER/.local/state/omarchy/current"
+2026-09-16 03:56:06.000 DEBUG quickshell.io.fileview: Creating watcher for FileView_QMLTYPE_5(0x7f50aa7f4c00) at "/home/USER/.local/state/omarchy/current"
+2026-09-16 03:56:06.000 DEBUG quickshell.io.fileview: Reader started for "/home/USER/.local/state/omarchy/current"
+2026-09-16 03:56:06.000 DEBUG qml: omarchy-shell paths omarchyPath=/usr/share/omarchy shellDir=/usr/share/omarchy/shell firstPartyPluginsDir=/usr/share/omarchy/shell/plugins defaultsPath=/usr/share/omarchy/config/omarchy/shell.json userConfigPath=/home/USER/.config/omarchy/shell.json
+2026-09-16 03:56:06.000 DEBUG quickshell.incubator: Incubation mode changed: render loop driven
+2026-09-16 03:56:06.000 DEBUG quickshell.ipchandler: Created new IPC handler registry 0x7f5089ca4260 for EngineGeneration(0x7f508a22ec00)
+2026-09-16 03:56:06.000 DEBUG quickshell.ipchandler: Registered qs::io::ipc::IpcHandler_QML_1542(0x7f508a189580) to registry qs::io::ipc::IpcHandlerRegistry(0x7f5089ca4250)
+2026-09-16 03:56:06.000 DEBUG quickshell.ipchandler: Registered qs::io::ipc::IpcHandler_QML_1541(0x7f508a189400) to registry qs::io::ipc::IpcHandlerRegistry(0x7f5089ca4250)
+2026-09-16 03:56:06.000 DEBUG quickshell.ipchandler: Registered qs::io::ipc::IpcHandler_QML_1531(0x7f508a188200) to registry qs::io::ipc::IpcHandlerRegistry(0x7f5089ca4250)
+2026-09-16 03:56:06.000  INFO: Configuration Loaded
+2026-09-16 03:56:06.000 DEBUG quickshell.io.fileview: Async operation finished for FileView_QMLTYPE_5(0x7f50aa7f7b40)
+2026-09-16 03:56:06.000 DEBUG quickshell.dbus.properties: Received GetAll property set for org.freedesktop.UPower/org/freedesktop/UPower/org.freedesktop.UPower
+2026-09-16 03:56:06.000 DEBUG quickshell.dbus.properties: Ignoring untracked property update "DaemonVersion" for "org.freedesktop.UPower/org/freedesktop/UPower/org.freedesktop.UPower"
+2026-09-16 03:56:06.000 DEBUG quickshell.dbus.properties: Ignoring untracked property update "LidIsClosed" for "org.freedesktop.UPower/org/freedesktop/UPower/org.freedesktop.UPower"
+2026-09-16 03:56:06.000 DEBUG quickshell.dbus.properties: Ignoring untracked property update "LidIsPresent" for "org.freedesktop.UPower/org/freedesktop/UPower/org.freedesktop.UPower"
+2026-09-16 03:56:06.000 DEBUG quickshell.dbus.properties: Updated property org.freedesktop.UPower/org/freedesktop/UPower/org.freedesktop.UPower:OnBattery to false 
+2026-09-16 03:56:06.000 DEBUG quickshell.service.upower: UPower default device registered at "/org/freedesktop/UPower/devices/DisplayDevice"
+2026-09-16 03:56:06.000 DEBUG quickshell.dbus.properties: Updating all properties of org.freedesktop.UPower/org/freedesktop/UPower/devices/DisplayDevice/org.freedesktop.UPower.Device via GetAll
+2026-09-16 03:56:06.000 DEBUG quickshell.dbus.properties: Updating all properties of org.freedesktop.UPower/org/freedesktop/UPower/devices/battery_hidpp_battery_0/org.freedesktop.UPower.Device via GetAll
+2026-09-16 03:56:06.000 DEBUG quickshell.service.upower: Registered UPowerDevice "/org/freedesktop/UPower/devices/battery_hidpp_battery_0"
+2026-09-16 03:56:06.000 DEBUG quickshell.io.fileview: Async operation finished for FileView_QMLTYPE_5(0x7f50aa7f9580)
+2026-09-16 03:56:06.000 DEBUG quickshell.dbus.properties: Received GetAll property set for org.mpris.MediaPlayer2.chromium.instance2610828/org/mpris/MediaPlayer2/org.mpris.MediaPlayer2
+2026-09-16 03:56:06.000 DEBUG quickshell.dbus.properties: Updated property org.mpris.MediaPlayer2.chromium.instance2610828/org/mpris/MediaPlayer2/org.mpris.MediaPlayer2:CanQuit to false 
+2026-09-16 03:56:06.000 DEBUG quickshell.dbus.properties: Updated property org.mpris.MediaPlayer2.chromium.instance2610828/org/mpris/MediaPlayer2/org.mpris.MediaPlayer2:CanRaise to false 
+2026-09-16 03:56:06.000 DEBUG quickshell.dbus.properties: Ignoring untracked property update "HasTrackList" for "org.mpris.MediaPlayer2.chromium.instance2610828/org/mpris/MediaPlayer2/org.mpris.MediaPlayer2"
+2026-09-16 03:56:06.000 DEBUG quickshell.dbus.properties: Updated property org.mpris.MediaPlayer2.chromium.instance2610828/org/mpris/MediaPlayer2/org.mpris.MediaPlayer2:Identity to "Chromium" 
+2026-09-16 03:56:06.000 DEBUG quickshell.dbus.properties: Updated property org.mpris.MediaPlayer2.chromium.instance2610828/org/mpris/MediaPlayer2/org.mpris.MediaPlayer2:SupportedMimeTypes to QList() 
+2026-09-16 03:56:06.000 DEBUG quickshell.dbus.properties: Updated property org.mpris.MediaPlayer2.chromium.instance2610828/org/mpris/MediaPlayer2/org.mpris.MediaPlayer2:SupportedUriSchemes to QList() 
+2026-09-16 03:56:06.000 DEBUG quickshell.dbus.properties: Received GetAll property set for org.mpris.MediaPlayer2.chromium.instance2610828/org/mpris/MediaPlayer2/org.mpris.MediaPlayer2.Player
+2026-09-16 03:56:06.000 DEBUG quickshell.dbus.properties: Updated property org.mpris.MediaPlayer2.chromium.instance2610828/org/mpris/MediaPlayer2/org.mpris.MediaPlayer2.Player:CanControl to true 
+2026-09-16 03:56:06.000 DEBUG quickshell.dbus.properties: Updated property org.mpris.MediaPlayer2.chromium.instance2610828/org/mpris/MediaPlayer2/org.mpris.MediaPlayer2.Player:CanGoNext to true 
+2026-09-16 03:56:06.000 DEBUG quickshell.dbus.properties: Updated property org.mpris.MediaPlayer2.chromium.instance2610828/org/mpris/MediaPlayer2/org.mpris.MediaPlayer2.Player:CanGoPrevious to true 
+2026-09-16 03:56:06.000 DEBUG quickshell.dbus.properties: Updated property org.mpris.MediaPlayer2.chromium.instance2610828/org/mpris/MediaPlayer2/org.mpris.MediaPlayer2.Player:CanPause to true 
+2026-09-16 03:56:06.000 DEBUG quickshell.dbus.properties: Updated property org.mpris.MediaPlayer2.chromium.instance2610828/org/mpris/MediaPlayer2/org.mpris.MediaPlayer2.Player:CanPlay to true 
+2026-09-16 03:56:06.000 DEBUG quickshell.dbus.properties: Updated property org.mpris.MediaPlayer2.chromium.instance2610828/org/mpris/MediaPlayer2/org.mpris.MediaPlayer2.Player:CanSeek to true 
+2026-09-16 03:56:06.000 DEBUG quickshell.dbus.properties: Updated property org.mpris.MediaPlayer2.chromium.instance2610828/org/mpris/MediaPlayer2/org.mpris.MediaPlayer2.Player:MaximumRate to 1 
+2026-09-16 03:56:06.000 DEBUG quickshell.dbus.properties: Updating property org.mpris.MediaPlayer2.chromium.instance2610828/org/mpris/MediaPlayer2/org.mpris.MediaPlayer2.Player:Position
+2026-09-16 03:56:06.000 DEBUG quickshell.dbus.properties: Updated property org.mpris.MediaPlayer2.chromium.instance2610828/org/mpris/MediaPlayer2/org.mpris.MediaPlayer2.Player:Metadata to QMap(("xesam:title", QVariant(QString, "Example track")))
+2026-09-16 03:56:06.000 DEBUG quickshell.dbus.properties: Updated property org.mpris.MediaPlayer2.chromium.instance2610828/org/mpris/MediaPlayer2/org.mpris.MediaPlayer2.Player:MinimumRate to 1 
+2026-09-16 03:56:06.000 DEBUG quickshell.dbus.properties: Updating property org.mpris.MediaPlayer2.chromium.instance2610828/org/mpris/MediaPlayer2/org.mpris.MediaPlayer2.Player:Position
+2026-09-16 03:56:06.000 DEBUG quickshell.dbus.properties: Updating property org.mpris.MediaPlayer2.chromium.instance2610828/org/mpris/MediaPlayer2/org.mpris.MediaPlayer2.Player:Position
+2026-09-16 03:56:06.000 DEBUG quickshell.dbus.properties: Updating property org.mpris.MediaPlayer2.chromium.instance2610828/org/mpris/MediaPlayer2/org.mpris.MediaPlayer2.Player:Metadata
+2026-09-16 03:56:06.000 DEBUG quickshell.dbus.properties: Updated property org.mpris.MediaPlayer2.chromium.instance2610828/org/mpris/MediaPlayer2/org.mpris.MediaPlayer2.Player:PlaybackStatus to qs::service::mpris::MprisPlaybackState::Playing 
+2026-09-16 03:56:06.000 DEBUG quickshell.dbus.properties: Updated property org.mpris.MediaPlayer2.chromium.instance2610828/org/mpris/MediaPlayer2/org.mpris.MediaPlayer2.Player:Position to 185606821 
+2026-09-16 03:56:06.000 DEBUG quickshell.dbus.properties: Updated property org.mpris.MediaPlayer2.chromium.instance2610828/org/mpris/MediaPlayer2/org.mpris.MediaPlayer2.Player:Rate to 1 
+2026-09-16 03:56:06.000 DEBUG quickshell.dbus.properties: Updated property org.mpris.MediaPlayer2.chromium.instance2610828/org/mpris/MediaPlayer2/org.mpris.MediaPlayer2.Player:Volume to 1 
+2026-09-16 03:56:06.000 DEBUG quickshell.io.fileview: Async operation finished for FileView_QMLTYPE_5(0x7f50b4266240)
+2026-09-16 03:56:06.000 DEBUG quickshell.io.fileview: Async operation finished for FileView_QMLTYPE_5(0x7f50b4266080)
+2026-09-16 03:56:06.000 DEBUG quickshell.io.fileview: Async operation finished for FileView_QMLTYPE_5(0x7f50aaad7800)
+2026-09-16 03:56:06.000 DEBUG quickshell.io.fileview: Async operation finished for FileView_QMLTYPE_5(0x7f50a25c9d80)
+2026-09-16 03:56:06.000 DEBUG quickshell.io.fileview: Async operation finished for FileView_QMLTYPE_5(0x7f50a25ca9c0)
+2026-09-16 03:56:06.000 DEBUG quickshell.io.fileview: Async operation finished for FileView_QMLTYPE_5(0x7f50a25ca800)
+2026-09-16 03:56:06.000 DEBUG quickshell.io.fileview: Async operation finished for FileView_QMLTYPE_5(0x7f5089f54c80)
+2026-09-16 03:56:06.000 DEBUG quickshell.io.fileview: Starting async load for FileView_QMLTYPE_5(0x7f508a02c2c0) of "/home/USER/.cache/omamail/account-none_.json"
+2026-09-16 03:56:06.000 DEBUG quickshell.io.fileview: Reader started for "/home/USER/.cache/omamail/account-none_.json"
+2026-09-16 03:56:06.000 DEBUG quickshell.io.fileview: Starting async load for FileView_QMLTYPE_5(0x7f508a02cf00) of "/home/USER/.config/omamail/credentials.json"
+2026-09-16 03:56:06.000 DEBUG quickshell.io.fileview: Reader started for "/home/USER/.config/omamail/credentials.json"
+2026-09-16 03:56:06.000 DEBUG quickshell.io.fileview: Creating watcher for FileView_QMLTYPE_5(0x7f508a02cf00) at "/home/USER/.config/omamail/credentials.json"
+2026-09-16 03:56:06.000 DEBUG quickshell.io.fileview: Async operation finished for FileView_QMLTYPE_5(0x7f5089f54ac0)
+2026-09-16 03:56:06.000 DEBUG quickshell.io.fileview: Async operation finished for FileView_QMLTYPE_5(0x7f5089f54900)
+2026-09-16 03:56:06.000 DEBUG quickshell.io.fileview: Async operation finished for FileView_QMLTYPE_5(0x7f5089f543c0)
+2026-09-16 03:56:06.000 DEBUG quickshell.io.fileview: Async operation finished for FileView_QMLTYPE_5(0x7f5089f54040)
+2026-09-16 03:56:06.000 DEBUG quickshell.io.fileview: Async operation finished for FileView_QMLTYPE_5(0x7f5089f53b00)
+2026-09-16 03:56:06.000  INFO quickshell.ipc: New IPC connection qs::ipc::IpcServerConnection(0x7f50aa7ce800)
+2026-09-16 03:56:06.000  INFO quickshell.hyprland.ipc: Hyprland event socket connected.
+2026-09-16 03:56:06.000 DEBUG quickshell.hyprland.ipc: Making request: "j/monitors"
+2026-09-16 03:56:06.000 DEBUG quickshell.hyprland.ipc: Making request: "j/workspaces"
+2026-09-16 03:56:06.000 DEBUG quickshell.hyprland.ipc: Making request: "j/clients"
+2026-09-16 03:56:06.000 DEBUG quickshell.service.pipewire.loop: Pipewire event loop received new events, iterating.
+2026-09-16 03:56:06.000 DEBUG quickshell.service.pipewire.loop: Done iterating pipewire event loop.
+2026-09-16 03:56:06.000 DEBUG qml: omarchy polkit agent registered
+2026-09-16 03:56:06.000 DEBUG quickshell.hyprland.ipc: Toplevel with address 94270799758624 requested before creation, performing early init
+2026-09-16 03:56:06.000 DEBUG quickshell.hyprland.ipc: Toplevel with address 94270725409136 requested before creation, performing early init
+2026-09-16 03:56:06.000 DEBUG quickshell.hyprland.ipc: Toplevel with address 94270738618192 requested before creation, performing early init
+2026-09-16 03:56:06.000 DEBUG quickshell.hyprland.ipc: Toplevel with address 94270738863696 requested before creation, performing early init
+2026-09-16 03:56:06.000 DEBUG quickshell.hyprland.ipc: Toplevel with address 94270801234320 requested before creation, performing early init
+2026-09-16 03:56:06.000 DEBUG quickshell.hyprland.ipc: Toplevel with address 94270735385904 requested before creation, performing early init
+2026-09-16 03:56:06.000 DEBUG quickshell.hyprland.ipc: Toplevel with address 94270737939456 requested before creation, performing early init
+2026-09-16 03:56:06.000 DEBUG quickshell.io.fileview: Starting async load for FileView_QMLTYPE_5(0x7f50aaad6680) of "/home/USER/.local/state/omarchy/notifications.json"
+2026-09-16 03:56:06.000 DEBUG quickshell.io.fileview: Creating watcher for FileView_QMLTYPE_5(0x7f50aaad6680) at "/home/USER/.local/state/omarchy/notifications.json"
+2026-09-16 03:56:06.000 DEBUG quickshell.io.fileview: Reader started for "/home/USER/.local/state/omarchy/notifications.json"
+2026-09-16 03:56:06.000 DEBUG quickshell.io.fileview: Starting async load for FileView_QMLTYPE_5(0x7f5089ade880) of "/home/USER/.local/state/omarchy/current/theme/colors.toml"
+2026-09-16 03:56:06.000 DEBUG quickshell.io.fileview: Creating watcher for FileView_QMLTYPE_5(0x7f5089ade880) at "/home/USER/.local/state/omarchy/current/theme/colors.toml"
+2026-09-16 03:56:06.000 DEBUG quickshell.io.fileview: Reader started for "/home/USER/.local/state/omarchy/current/theme/colors.toml"
+2026-09-16 03:56:06.000 DEBUG quickshell.io.fileview: Starting async load for FileView_QMLTYPE_5(0x7f508a093380) of "/home/USER/.local/state/omarchy/current/theme/icons.theme"
+2026-09-16 03:56:06.000 DEBUG quickshell.io.fileview: Creating watcher for FileView_QMLTYPE_5(0x7f508a093380) at "/home/USER/.local/state/omarchy/current/theme/icons.theme"
+2026-09-16 03:56:06.000 DEBUG quickshell.io.fileview: Reader started for "/home/USER/.local/state/omarchy/current/theme/icons.theme"
+2026-09-16 03:56:06.000 DEBUG quickshell.io.fileview: Starting async load for FileView_QMLTYPE_5(0x7f508a094dc0) of "/home/USER/.config/omarchy/dock.json"
+2026-09-16 03:56:06.000 DEBUG quickshell.io.fileview: Creating watcher for FileView_QMLTYPE_5(0x7f508a094dc0) at "/home/USER/.config/omarchy/dock.json"
+2026-09-16 03:56:06.000 DEBUG quickshell.io.fileview: Reader started for "/home/USER/.config/omarchy/dock.json"
+2026-09-16 03:56:06.000 DEBUG quickshell.io.fileview: Starting async load for FileView_QMLTYPE_5(0x7f5089adedc0) of "/home/USER/.config/omarchy/omadock.json"
+2026-09-16 03:56:06.000 DEBUG quickshell.io.fileview: Creating watcher for FileView_QMLTYPE_5(0x7f5089adedc0) at "/home/USER/.config/omarchy/omadock.json"
+2026-09-16 03:56:06.000 DEBUG quickshell.io.fileview: Reader started for "/home/USER/.config/omarchy/omadock.json"
