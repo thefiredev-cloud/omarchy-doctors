@@ -16,15 +16,16 @@ This runs `python3 -m unittest discover -s tests` inside each tool folder. Expec
 ## display-doctor
 
 ```bash
-./display-doctor/display-doctor          # text report
-./display-doctor/display-doctor --json   # machine readable
+./display-doctor/display-doctor               # text report
+./display-doctor/display-doctor --json        # machine readable
+./display-doctor/display-doctor --samples 5   # gpu_busy_percent samples (default 3)
 ```
 
 Reads:
 
 1. `hyprctl monitors all -j`: current mode against the best `availableModes` entry (highest refresh at the native size), scale and VRR.
 2. `hyprctl getoption`: animations, blur, shadow, `misc:vrr`.
-3. `/sys/class/drm/card*/device/gpu_busy_percent` (3 samples) and the card that owns each monitor connector.
+3. `/sys/class/drm/card*/device/gpu_busy_percent` (`--samples` reads, default 3) and the card that owns each monitor connector.
 4. Directories in `$XDG_RUNTIME_DIR/hypr`. A directory is stale when its `.socket.sock` is missing or refuses a connection.
 
 Findings are ranked by severity (high, medium, low, info) plus a small bonus for size. Exit code 0 means Hyprland answered. Exit code 1 means no live instance was found. The JSON still prints, with `errors`.
@@ -46,7 +47,11 @@ It never injects keys, never calls `hyprctl keyword`, `dispatch` or `reload`, an
 
 ```bash
 python3 bar-plugin-audit/bar_plugin_audit.py [--json] [--all] [--no-crashes] [--no-qml]
+python3 bar-plugin-audit/bar_plugin_audit.py \
+    [--plugins-dir DIR] [--shell-json FILE] [--builtin-dir DIR] [--crashes-dir DIR]
 ```
+
+Defaults: `--plugins-dir ~/.config/omarchy/plugins`, `--shell-json ~/.config/omarchy/shell.json`, `--builtin-dir /usr/share/omarchy/shell/plugins`, `--crashes-dir ~/.cache/quickshell/crashes`.
 
 Reads `~/.config/omarchy/plugins`, `~/.config/omarchy/shell.json`, stock manifests under `/usr/share/omarchy/shell/plugins` and `~/.cache/quickshell/crashes`. It never writes to them. The QML hazard scan checks every plugin that is in the bar layout or enabled for five patterns: unqualified `Color.popups` or `Color.notifications`, layer effects (crash on window scale change), unguarded `root.bar.foreground` theme reads (null during bar rebuilds), unguarded deferred `root.` calls, and `height: visible ? implicitHeight : 0` binding loops.
 
