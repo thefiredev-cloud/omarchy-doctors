@@ -13,7 +13,7 @@ Four read-only diagnostics for an Omarchy desktop (Arch Linux, Hyprland, Quicksh
 
 - They run on the Linux desktop they inspect. No GPU is required, no server and no install: each tool is one Python file.
 - Nothing leaves the machine. They make no network calls and write no files. They read `hyprctl` output, `/sys`, local config and crash reports.
-- `display-doctor` reports GPU load only for amdgpu cards. Use `nvidia-smi` for NVIDIA.
+- `display-doctor` reports GPU load only where sysfs exposes `gpu_busy_percent` (amdgpu). Use `nvidia-smi` for NVIDIA.
 
 ## How it works
 
@@ -32,7 +32,7 @@ flowchart LR
   qs --> rep
 ```
 
-Each tool finds the live Hyprland instance itself, so a stale `HYPRLAND_INSTANCE_SIGNATURE` in your shell does not hide the problem. `display-doctor` allows only the `monitors` and `getoption` verbs. Any other verb raises before a process starts, and the tests cover that.
+`display-doctor` and `input-doctor` find the live Hyprland instance themselves, so a stale `HYPRLAND_INSTANCE_SIGNATURE` in your shell does not hide the problem. `display-doctor` allows only the `monitors` and `getoption` verbs. Any other verb raises before a process starts, and the tests cover that. `bar-plugin-audit` and `qs-crash-digest` read files only and never call `hyprctl`.
 
 ## Stack
 
