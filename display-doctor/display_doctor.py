@@ -67,6 +67,9 @@ def parse_option(raw):
         data = json.loads(raw)
     except (ValueError, TypeError):
         return None
+    if not isinstance(data, dict):
+        # `null`, `[]`, `"x"` or a bare number: no value to read, not a crash.
+        return None
     for key in ("bool", "int", "float", "str", "custom"):
         if key in data:
             return data[key]

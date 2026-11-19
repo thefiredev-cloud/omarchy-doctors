@@ -62,6 +62,12 @@ class ModeTests(unittest.TestCase):
         self.assertEqual(dd.parse_option('{"option": "a", "int": 0, "set": false }'), 0)
         self.assertIsNone(dd.parse_option("no such option"))
 
+    def test_parse_option_non_object_json_is_none(self):
+        # hyprctl can answer with valid JSON that is not an option object.
+        for raw in ("null", "[]", '"x"', "5", "true"):
+            self.assertIsNone(dd.parse_option(raw), raw)
+        self.assertIsNone(dd.parse_option(None))
+
 
 class AnalyzeTests(unittest.TestCase):
     def test_live_capture_is_at_best_mode(self):
@@ -238,6 +244,31 @@ class FakeSys(unittest.TestCase):
         self.assertEqual(set(s["options"]), set(dd.OPTIONS))
         self.assertEqual({c[1][0] for c in calls}, {"monitors", "getoption"})
         self.assertEqual(s["errors"], [])
+
+    def test_collect_survives_null_getoption(self):
+        hypr = os.path.join(self.tmp, "run", "hypr", "sig1")
+        os.makedirs(hypr)
+        open(os.path.join(hypr, ".socket.sock"), "w").close()
+
+        def factory(signature):
+            def run(args):
+                if args[0] == "monitors":
+                    return json.dumps(LIVE)
+                return "null"
+
+            return run
+
+        s = dd.collect(
+            runtime_dir=os.path.join(self.tmp, "run"),
+            drm_root=os.path.join(self.tmp, "nodrm"),
+            env_signature="sig1",
+            alive=lambda p: True,
+            runner_factory=factory,
+        )
+        self.assertEqual(set(s["options"]), set(dd.OPTIONS))
+        self.assertEqual(set(s["options"].values()), {None})
+        self.assertEqual(s["errors"], [])
+        json.dumps(dd.build_result(s))
 
     def test_collect_without_live_instance(self):
         os.makedirs(os.path.join(self.tmp, "run", "hypr", "sig1"))
