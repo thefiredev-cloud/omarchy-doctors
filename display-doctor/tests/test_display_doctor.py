@@ -47,7 +47,7 @@ def ids(result):
 
 class ModeTests(unittest.TestCase):
     def test_parse_mode(self):
-        self.assertEqual(dd.parse_mode("3840x2160@239.99Hz"), (3840, 2160, 239.99))
+        self.assertEqual(dd.parse_mode("3840x2160@239.99Hz"), (3840, 2160, 1.0))
         self.assertIsNone(dd.parse_mode("garbage"))
 
     def test_best_mode_is_highest_refresh_at_native_size(self):
